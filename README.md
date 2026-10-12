@@ -1,11 +1,14 @@
 # Autonomous Agent Starter (Windows + Cloud-ready)
 
-A safe starter scaffold for a self-hosted AI task-planning coordinator. **This is not yet a fully autonomous repair or deployment system.**
+A starter scaffold for a self-hosted AI task-planning coordinator. **This is not yet a fully autonomous repair or deployment system.**
+
+> **Repository visibility:** this repository is currently public. Do not commit secrets, private source code, logs, or customer data. Change it to private in GitHub Settings if you want the source restricted.
 
 ## Included
 - FastAPI task API and a LangGraph investigation → plan → independent review workflow.
-- PostgreSQL service for future durable state (the current workflow does not persist tasks yet).
+- PostgreSQL service placeholder for future durable state (the current workflow does not persist tasks).
 - Docker Compose and a Windows PowerShell starter script.
+- GitHub Actions CI and basic API tests.
 - Security notes and a non-secret environment template.
 
 ## Windows setup
@@ -29,10 +32,10 @@ A safe starter scaffold for a self-hosted AI task-planning coordinator. **This i
 - `GET /health`
 - `POST /tasks` JSON: `{"task":"Describe the task in at least 10 characters","mode":"plan_only"}`
 
-The current implementation only creates a plan and review. It does not execute shell commands, modify repositories, run tests, deploy, or automatically repair production systems.
+The current implementation only creates a plan and review. It does not execute shell commands, modify repositories, run project tests, deploy, or automatically repair production systems.
 
 ## Cloud deployment
-Do not expose port 8787 or PostgreSQL to the public internet. A cloud deployment needs a hardened Linux VM, firewall rules, authenticated TLS access, private connectivity (VPN or authenticated outbound tunnel), backups, monitoring, and secret management. Do not publish Docker's socket.
+Do not expose port 8787 or PostgreSQL to the public internet. A cloud deployment needs a hardened Linux VM, firewall rules, authenticated TLS access, private connectivity (VPN or authenticated outbound tunnel), backups, monitoring, and secret management. Do not publish Docker's socket. No cloud server has been provisioned by this repository change.
 
 ## Next engineering milestones
 1. Add authentication, durable task storage, audit logs, rate limits, and spending limits.
